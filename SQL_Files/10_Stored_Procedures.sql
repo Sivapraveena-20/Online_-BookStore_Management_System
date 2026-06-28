@@ -1,14 +1,6 @@
--- ==============================================
--- 10_Stored_Procedures.sql | Online Bookstore System
--- ==============================================
-
 -- Add a new book to the Books table
--- FIX: Column names corrected to match 02_create_tables.sql
---      (Publisher_id, Published_Year → case-sensitive match)
---      EXISTS check uses correct column name Publisher_id
 
 DELIMITER $$
-
 CREATE PROCEDURE AddBook(
     IN p_title          VARCHAR(200),
     IN p_author         VARCHAR(150),
@@ -18,21 +10,19 @@ CREATE PROCEDURE AddBook(
     IN p_category       VARCHAR(100)
 )
 BEGIN
-
-    -- Check if the Publisher_id exists in Publishers table
     IF EXISTS (
         SELECT 1
         FROM Publishers
-        WHERE Publisher_id = p_publisher_id   -- ✅ Fixed: was 'PublisherID' (wrong column name)
+        WHERE Publisher_id = p_publisher_id   
     ) THEN
 
         INSERT INTO Books
         (
             Title,
             Author,
-            Publisher_id,        -- ✅ Fixed: was 'PublisherID'
+            Publisher_id,        
             Price,
-            Published_Year,      -- ✅ Fixed: was 'PublishedYear'
+            Published_Year,     
             Category
         )
         VALUES
@@ -45,7 +35,6 @@ BEGIN
             p_category
         );
 
-        -- Success message
         SELECT CONCAT('Book "', p_title, '" added successfully.') AS Message;
 
     ELSE
@@ -60,9 +49,7 @@ END $$
 DELIMITER ;
 
 
--- Test the procedure
--- Publisher_id = 3 exists (Oxford University Press)
 CALL AddBook('The Oxford Handbook of Data Science', 'Various Authors', 3, 1499.00, 2022, 'Computer Science');
 
--- Verify the book was added
+
 SELECT * FROM Books WHERE Title = 'The Oxford Handbook of Data Science';
