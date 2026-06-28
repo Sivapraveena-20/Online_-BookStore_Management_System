@@ -118,11 +118,8 @@ The database is normalized up to **Third Normal Form (3NF)**:
 
 ## 👩‍💻 Author
 
-**Sivapraveena**  
+**Sivapraveena Palanisamy**  
 B.Tech Computer Science and Business Systems  
 📧 vishalisibi@gmail.com  
 
 ---
-
-## 📄 License
-This project is created for educational and portfolio purposes.
