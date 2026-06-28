@@ -2,10 +2,6 @@
 
 A complete relational database project built with **MySQL**, modelling an Online Bookstore with full CRUD operations, analytical queries, views, stored procedures, and functions.
 
----
-
-## 📌 Project Overview
-
 This project simulates a real-world **Online Bookstore Management System** using a normalized relational database. It covers the complete lifecycle of bookstore operations — from managing books, customers, and employees to processing orders, payments, and inventory.
 
 ---
