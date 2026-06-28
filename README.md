@@ -36,38 +36,6 @@ The database `ONLINE_BOOKSTORE_DB` consists of **9 interrelated tables**:
 
 ---
 
-## 📁 Project Structure
-
-```
-Online-Bookstore-System/
-│
-├── 01_create_database.sql        # Database creation
-├── 02_create_tables.sql          # Table schemas with constraints
-├── 03_insert_data.sql            # Sample data insertion
-├── 04_Basic_Queries.sql          # SELECT, WHERE, ORDER BY, LIMIT
-├── 05_Aggregate_functions.sql    # COUNT, SUM, AVG, MAX, MIN
-├── 06_Group_by_Having.sql        # GROUP BY and HAVING clauses
-├── 07_Joins.sql                  # INNER, LEFT, RIGHT joins
-├── 08_Sub_queries.sql            # Subqueries and nested SELECTs
-├── 09_Views.sql                  # SQL Views
-├── 10_Stored_Procedures.sql      # Stored Procedures
-├── 11_Functions.sql              # User-defined Functions
-│
-├── screenshots/                  # Query output screenshots
-│   ├── ER_Diagram.png
-│   ├── 01_tables_created.png
-│   ├── 02_publishers.png
-│   ├── 03_books.png
-│   ├── 04_customers.png
-│   ├── 05_orders.png
-│   ├── 06_joins_output.png
-│   ├── 07_subquery_output.png
-│   └── ...
-│
-├── Normalization_Documentation.docx
-└── README.md
-```
-
 ---
 
 ## 🔧 How to Run
@@ -131,38 +99,6 @@ Online-Bookstore-System/
 
 ---
 
-## 📊 Sample Queries & Outputs
-
-### Books priced above average
-```sql
-SELECT Title, Price
-FROM Books
-WHERE Price > (SELECT AVG(Price) FROM Books);
-```
-
-### Customer who spent the most
-```sql
-SELECT Customer_id, Customer_name
-FROM Customers
-WHERE Customer_id = (
-    SELECT Customer_id FROM Orders
-    GROUP BY Customer_id
-    ORDER BY SUM(Total_amount) DESC
-    LIMIT 1
-);
-```
-
-### All orders with customer names (INNER JOIN)
-```sql
-SELECT C.Customer_name, O.Order_id, O.Order_date, O.Total_amount, O.Status
-FROM Customers C
-INNER JOIN Orders O ON C.Customer_id = O.Customer_id;
-```
-
-> See the `screenshots/` folder for output images of all major queries.
-
----
-
 ## 🗃️ Normalization
 
 The database is normalized up to **Third Normal Form (3NF)**:
@@ -170,9 +106,6 @@ The database is normalized up to **Third Normal Form (3NF)**:
 - **1NF**: All columns contain atomic values; each table has a primary key.
 - **2NF**: No partial dependencies (all non-key attributes depend on the full primary key).
 - **3NF**: No transitive dependencies (non-key attributes depend only on the primary key).
-
-📄 Full normalization analysis: [`Normalization_Documentation.docx`](Normalization_Documentation.docx)
-
 ---
 
 ## 🛠️ Tools Used
@@ -187,11 +120,9 @@ The database is normalized up to **Third Normal Form (3NF)**:
 
 **Sivapraveena**  
 B.Tech Computer Science and Business Systems  
-📧 your-email@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/your-profile)
+📧 vishalisibi@gmail.com  
 
 ---
 
 ## 📄 License
-
 This project is created for educational and portfolio purposes.
