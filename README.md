@@ -30,7 +30,7 @@ The database `ONLINE_BOOKSTORE_DB` consists of **9 interrelated tables**:
 
 ## 🖼️ ER Diagram
 
-![ER Diagram](ER_Diagram/ER_Diagram_Online_BookStore_System__.png.)
+![ER Diagram](ER Diagram/ER_Diagram_Online_BookStore_System__.png)
 
 > Entity-Relationship Diagram created using MySQL Workbench showing all 9 tables and their relationships.
 
